@@ -14,15 +14,15 @@ std::string ReadText(const std::string& filename) {
     return text;
 }
 
-static auto dictionary = ReadNgrams("../decoder/english_quadgrams.txt");
+static auto dictionary = ReadNgrams("../english_quadgrams.txt");
 
 TEST_CASE("my test1") {
-    REQUIRE(Decode(ReadText("../decoder/tests/first.txt"), dictionary).substr(0, 41) ==
+    REQUIRE(Decode(ReadText("../tests/first.txt"), dictionary).substr(0, 41) ==
             "At the crisp command of Shark Dodson, who");
 
 }
 
 TEST_CASE("my test2") {
-    REQUIRE(Decode(ReadText("../decoder/tests/second.txt"), dictionary).substr(0, 44) ==
+    REQUIRE(Decode(ReadText("../tests/second.txt"), dictionary).substr(0, 44) ==
             "Simulated annealing (SA) is a probabilistic ");
 }
